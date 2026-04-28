@@ -593,37 +593,101 @@ body {
   line-height: 1.8;
 }
 
-/* ── FIGMA LINK BUTTON ── */
-.figma-link {
-  display: inline-flex;
+/* ── FIGMA CARD BUTTON ── */
+.figma-card {
+  display: flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: 1rem;
   background: linear-gradient(135deg, #F24E1E 0%, #FF7262 100%);
   color: white;
-  padding: 0.75rem 1.25rem;
-  border-radius: 10px;
-  font-size: 0.9rem;
-  font-weight: 700;
+  padding: 1.25rem 1.5rem;
+  border-radius: 16px;
   text-decoration: none;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 12px rgba(242, 78, 30, 0.3);
-  margin-top: 0.75rem;
+  box-shadow: 0 4px 16px rgba(242, 78, 30, 0.25);
+  margin-top: 1rem;
+  position: relative;
+  overflow: hidden;
 }
 
-.figma-link:hover {
+.figma-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0) 100%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.figma-card:hover::before {
+  opacity: 1;
+}
+
+.figma-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(242, 78, 30, 0.4);
+}
+
+.figma-card:active {
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(242, 78, 30, 0.4);
-  background: linear-gradient(135deg, #E03E0E 0%, #F24E1E 100%);
 }
 
-.figma-link:active {
-  transform: translateY(0);
+.figma-card-icon {
+  font-size: 2.5rem;
+  flex-shrink: 0;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
 }
 
+.figma-card-content {
+  flex: 1;
+}
+
+.figma-card-title {
+  font-size: 1.05rem;
+  font-weight: 800;
+  margin-bottom: 0.25rem;
+  letter-spacing: -0.3px;
+}
+
+.figma-card-desc {
+  font-size: 0.85rem;
+  opacity: 0.9;
+}
+
+.figma-card-arrow {
+  font-size: 1.5rem;
+  font-weight: 700;
+  flex-shrink: 0;
+  transition: transform 0.3s ease;
+}
+
+.figma-card:hover .figma-card-arrow {
+  transform: translateX(4px);
+}
+
+/* 반응형 */
 @media (max-width: 480px) {
-  .figma-link {
-    font-size: 0.85rem;
-    padding: 0.65rem 1rem;
+  .figma-card {
+    padding: 1rem 1.25rem;
+  }
+
+  .figma-card-icon {
+    font-size: 2rem;
+  }
+
+  .figma-card-title {
+    font-size: 0.95rem;
+  }
+
+  .figma-card-desc {
+    font-size: 0.8rem;
+  }
+
+  .figma-card-arrow {
+    font-size: 1.25rem;
   }
 }
 
