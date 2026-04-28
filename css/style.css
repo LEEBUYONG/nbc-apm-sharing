@@ -1,5 +1,5 @@
 /* ============================================
-   밍글데이 수강생용 가이드 - CSS
+   밍글데이 수강생용 가이드 - CSS (최종)
    작성일: 2026.04.28
 ============================================ */
 
@@ -23,6 +23,8 @@
   --text-light: #64748B;
   --border: #E2E8F0;
   --shadow: rgba(0, 0, 0, 0.1);
+  --warning: #F59E0B;
+  --warning-bg: #FFFBEB;
   --gradient-1: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   --gradient-2: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
   --gradient-3: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
@@ -175,6 +177,18 @@ body {
 .hero-small p {
   font-size: 0.95rem;
   opacity: 0.9;
+  margin-bottom: 0.75rem;
+}
+
+.time-badge {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 20px;
+  padding: 0.5rem 1rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-top: 0.5rem;
 }
 
 /* ── SECTION ── */
@@ -346,7 +360,7 @@ body {
 
 .step {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 1rem;
   background: var(--card-bg);
   padding: 1.25rem;
@@ -377,7 +391,93 @@ body {
 .step-text {
   font-size: 0.95rem;
   color: var(--text);
-  font-weight: 500;
+  line-height: 1.7;
+}
+
+/* ── PREP STEPS (그림 빙고 사전 준비) ── */
+.prep-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.prep-step {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.25rem;
+  background: var(--card-bg);
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px var(--shadow);
+  border-left: 4px solid var(--primary);
+  transition: all 0.3s ease;
+}
+
+.prep-step:hover {
+  transform: translateX(4px);
+  box-shadow: 0 4px 16px var(--shadow);
+}
+
+.prep-num {
+  min-width: 45px;
+  height: 45px;
+  background: var(--primary);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 1.2rem;
+  flex-shrink: 0;
+}
+
+.prep-content {
+  flex: 1;
+}
+
+.prep-title {
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: var(--text);
+  margin-bottom: 0.5rem;
+}
+
+.prep-desc {
+  font-size: 0.9rem;
+  color: var(--text-light);
+  line-height: 1.7;
+}
+
+/* ── CHARACTER EXAMPLES (그림 빙고 캐릭터 예시) ── */
+.character-examples {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.char-category {
+  background: var(--card-bg);
+  border-radius: 12px;
+  padding: 1.25rem;
+  box-shadow: 0 2px 8px var(--shadow);
+  border-left: 4px solid var(--primary);
+}
+
+.char-category-title {
+  font-size: 1rem;
+  font-weight: 800;
+  color: var(--text);
+  margin-bottom: 0.75rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.char-list {
+  font-size: 0.9rem;
+  color: var(--text-light);
+  line-height: 1.8;
 }
 
 /* ── ALERT ── */
@@ -387,12 +487,21 @@ body {
   margin-top: 1.5rem;
   font-size: 0.9rem;
   line-height: 1.7;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
 }
 
 .alert-info {
   background: #EFF6FF;
   border-left: 4px solid #3B82F6;
   color: #1E40AF;
+}
+
+.alert-warning {
+  background: var(--warning-bg);
+  border-left: 4px solid var(--warning);
+  color: #92400E;
 }
 
 /* ── AWARD LIST ── */
@@ -417,6 +526,30 @@ body {
 .award-item:hover {
   transform: translateY(-4px);
   box-shadow: 0 6px 20px var(--shadow);
+}
+
+/* ── AWARD GRID SMALL (그림 빙고용) ── */
+.award-grid-small {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 0.75rem;
+}
+
+.award-small {
+  background: var(--card-bg);
+  padding: 1rem;
+  border-radius: 10px;
+  text-align: center;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--text);
+  box-shadow: 0 2px 8px var(--shadow);
+  transition: all 0.3s ease;
+}
+
+.award-small:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 16px var(--shadow);
 }
 
 /* ── CLOSING MESSAGE ── */
@@ -503,6 +636,29 @@ body {
   .award-list {
     grid-template-columns: 1fr;
   }
+
+  .award-grid-small {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .prep-step {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .prep-num {
+    min-width: 40px;
+    height: 40px;
+    font-size: 1.1rem;
+  }
+
+  .character-examples {
+    gap: 0.75rem;
+  }
+
+  .char-category {
+    padding: 1rem;
+  }
 }
 
 @media (max-width: 480px) {
@@ -516,5 +672,25 @@ body {
 
   .hero-small {
     padding: 1.5rem 1rem;
+  }
+
+  .time-badge {
+    font-size: 0.75rem;
+    padding: 0.4rem 0.8rem;
+  }
+
+  .award-grid-small {
+    grid-template-columns: 1fr;
+  }
+
+  .step {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .step-num {
+    min-width: 35px;
+    height: 35px;
+    font-size: 1rem;
   }
 }
