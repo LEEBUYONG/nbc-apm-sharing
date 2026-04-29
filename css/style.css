@@ -1,6 +1,6 @@
 /* ============================================
-   밍글데이 수강생용 가이드 - CSS (최종)
-   작성일: 2026.04.28
+   밍글데이 수강생용 가이드 - CSS (최종 수정)
+   작성일: 2026.04.29
 ============================================ */
 
 /* ── RESET ── */
@@ -8,182 +8,6 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-}
-/* ── FIGMA CARD BUTTON ── */
-.figma-card {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  background: linear-gradient(135deg, #F24E1E 0%, #FF7262 100%);
-  color: white;
-  padding: 1.25rem 1.5rem;
-  border-radius: 16px;
-  text-decoration: none;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 16px rgba(242, 78, 30, 0.25);
-  margin-top: 1rem;
-  position: relative;
-  overflow: hidden;
-}
-
-.figma-card::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0) 100%);
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
-
-.figma-card:hover::before {
-  opacity: 1;
-}
-
-.figma-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 8px 24px rgba(242, 78, 30, 0.4);
-}
-
-.figma-card:active {
-  transform: translateY(-2px);
-}
-
-.figma-card-icon {
-  font-size: 2.5rem;
-  flex-shrink: 0;
-  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
-}
-
-.figma-card-content {
-  flex: 1;
-}
-
-.figma-card-title {
-  font-size: 1.05rem;
-  font-weight: 800;
-  margin-bottom: 0.25rem;
-  letter-spacing: -0.3px;
-}
-
-.figma-card-desc {
-  font-size: 0.85rem;
-  opacity: 0.9;
-}
-
-.figma-card-arrow {
-  font-size: 1.5rem;
-  font-weight: 700;
-  flex-shrink: 0;
-  transition: transform 0.3s ease;
-}
-
-.figma-card:hover .figma-card-arrow {
-  transform: translateX(4px);
-}
-
-/* ── AWARD DETAIL CARD (라디오 시상 상세) ── */
-.award-detail-card {
-  background: var(--card-bg);
-  border-radius: 16px;
-  padding: 1.5rem;
-  margin-bottom: 1.25rem;
-  box-shadow: 0 2px 12px var(--shadow);
-  border-left: 5px solid var(--primary);
-  transition: all 0.3s ease;
-}
-
-.award-detail-card:hover {
-  transform: translateX(4px);
-  box-shadow: 0 4px 20px var(--shadow);
-}
-
-.award-detail-header {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  margin-bottom: 1rem;
-  padding-bottom: 1rem;
-  border-bottom: 2px solid var(--border);
-}
-
-.award-detail-icon {
-  font-size: 2.5rem;
-  flex-shrink: 0;
-}
-
-.award-detail-title {
-  font-size: 1.4rem;
-  font-weight: 900;
-  color: var(--text);
-  letter-spacing: -0.5px;
-}
-
-.award-detail-content {
-  display: flex;
-  flex-direction: column;
-  gap: 0.75rem;
-}
-
-.award-detail-criteria,
-.award-detail-point {
-  font-size: 0.95rem;
-  line-height: 1.7;
-  color: var(--text);
-}
-
-.award-detail-criteria strong,
-.award-detail-point strong {
-  color: var(--primary);
-  font-weight: 800;
-}
-
-/* 반응형 */
-@media (max-width: 480px) {
-  .figma-card {
-    padding: 1rem 1.25rem;
-  }
-
-  .figma-card-icon {
-    font-size: 2rem;
-  }
-
-  .figma-card-title {
-    font-size: 0.95rem;
-  }
-
-  .figma-card-desc {
-    font-size: 0.8rem;
-  }
-
-  .figma-card-arrow {
-    font-size: 1.25rem;
-  }
-
-  .award-detail-card {
-    padding: 1.25rem;
-  }
-
-  .award-detail-header {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0.75rem;
-  }
-
-  .award-detail-icon {
-    font-size: 2rem;
-  }
-
-  .award-detail-title {
-    font-size: 1.2rem;
-  }
-
-  .award-detail-criteria,
-  .award-detail-point {
-    font-size: 0.9rem;
-  }
 }
 
 /* ── VARIABLES ── */
@@ -656,6 +480,137 @@ body {
   line-height: 1.8;
 }
 
+/* ── FIGMA CARD BUTTON ── */
+.figma-card {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background: linear-gradient(135deg, #F24E1E 0%, #FF7262 100%);
+  color: white;
+  padding: 1.25rem 1.5rem;
+  border-radius: 16px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 16px rgba(242, 78, 30, 0.25);
+  margin-top: 1rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.figma-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0) 100%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.figma-card:hover::before {
+  opacity: 1;
+}
+
+.figma-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(242, 78, 30, 0.4);
+}
+
+.figma-card:active {
+  transform: translateY(-2px);
+}
+
+.figma-card-icon {
+  font-size: 2.5rem;
+  flex-shrink: 0;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+}
+
+.figma-card-content {
+  flex: 1;
+}
+
+.figma-card-title {
+  font-size: 1.05rem;
+  font-weight: 800;
+  margin-bottom: 0.25rem;
+  letter-spacing: -0.3px;
+}
+
+.figma-card-desc {
+  font-size: 0.85rem;
+  opacity: 0.9;
+}
+
+.figma-card-arrow {
+  font-size: 1.5rem;
+  font-weight: 700;
+  flex-shrink: 0;
+  transition: transform 0.3s ease;
+}
+
+.figma-card:hover .figma-card-arrow {
+  transform: translateX(4px);
+}
+
+/* ── AWARD DETAIL CARD (라디오 시상 상세) ── */
+.award-detail-card {
+  background: var(--card-bg);
+  border-radius: 16px;
+  padding: 1.5rem;
+  margin-bottom: 1.25rem;
+  box-shadow: 0 2px 12px var(--shadow);
+  border-left: 5px solid var(--primary);
+  transition: all 0.3s ease;
+}
+
+.award-detail-card:hover {
+  transform: translateX(4px);
+  box-shadow: 0 4px 20px var(--shadow);
+}
+
+.award-detail-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid var(--border);
+}
+
+.award-detail-icon {
+  font-size: 2.5rem;
+  flex-shrink: 0;
+}
+
+.award-detail-title {
+  font-size: 1.4rem;
+  font-weight: 900;
+  color: var(--text);
+  letter-spacing: -0.5px;
+}
+
+.award-detail-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.award-detail-criteria,
+.award-detail-point {
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: var(--text);
+}
+
+.award-detail-criteria strong,
+.award-detail-point strong {
+  color: var(--primary);
+  font-weight: 800;
+}
+
 /* ── ALERT ── */
 .alert {
   padding: 1rem 1.25rem;
@@ -769,104 +724,6 @@ body {
   line-height: 1.8;
 }
 
-/* ── FIGMA CARD BUTTON ── */
-.figma-card {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  background: linear-gradient(135deg, #F24E1E 0%, #FF7262 100%);
-  color: white;
-  padding: 1.25rem 1.5rem;
-  border-radius: 16px;
-  text-decoration: none;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 16px rgba(242, 78, 30, 0.25);
-  margin-top: 1rem;
-  position: relative;
-  overflow: hidden;
-}
-
-.figma-card::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0) 100%);
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
-
-.figma-card:hover::before {
-  opacity: 1;
-}
-
-.figma-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 8px 24px rgba(242, 78, 30, 0.4);
-}
-
-.figma-card:active {
-  transform: translateY(-2px);
-}
-
-.figma-card-icon {
-  font-size: 2.5rem;
-  flex-shrink: 0;
-  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
-}
-
-.figma-card-content {
-  flex: 1;
-}
-
-.figma-card-title {
-  font-size: 1.05rem;
-  font-weight: 800;
-  margin-bottom: 0.25rem;
-  letter-spacing: -0.3px;
-}
-
-.figma-card-desc {
-  font-size: 0.85rem;
-  opacity: 0.9;
-}
-
-.figma-card-arrow {
-  font-size: 1.5rem;
-  font-weight: 700;
-  flex-shrink: 0;
-  transition: transform 0.3s ease;
-}
-
-.figma-card:hover .figma-card-arrow {
-  transform: translateX(4px);
-}
-
-/* 반응형 */
-@media (max-width: 480px) {
-  .figma-card {
-    padding: 1rem 1.25rem;
-  }
-
-  .figma-card-icon {
-    font-size: 2rem;
-  }
-
-  .figma-card-title {
-    font-size: 0.95rem;
-  }
-
-  .figma-card-desc {
-    font-size: 0.8rem;
-  }
-
-  .figma-card-arrow {
-    font-size: 1.25rem;
-  }
-}
-
 /* ── RESPONSIVE ── */
 @media (max-width: 768px) {
   .logo {
@@ -933,6 +790,20 @@ body {
   .char-category {
     padding: 1rem;
   }
+
+  .award-detail-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+
+  .award-detail-icon {
+    font-size: 2rem;
+  }
+
+  .award-detail-title {
+    font-size: 1.2rem;
+  }
 }
 
 @media (max-width: 480px) {
@@ -967,5 +838,33 @@ body {
     height: 35px;
     font-size: 1rem;
   }
-}
+
+  .figma-card {
+    padding: 1rem 1.25rem;
+  }
+
+  .figma-card-icon {
+    font-size: 2rem;
+  }
+
+  .figma-card-title {
+    font-size: 0.95rem;
+  }
+
+  .figma-card-desc {
+    font-size: 0.8rem;
+  }
+
+  .figma-card-arrow {
+    font-size: 1.25rem;
+  }
+
+  .award-detail-card {
+    padding: 1.25rem;
+  }
+
+  .award-detail-criteria,
+  .award-detail-point {
+    font-size: 0.9rem;
+  }
 }
