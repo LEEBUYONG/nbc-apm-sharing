@@ -1,8 +1,259 @@
+/* ============================================
+   밍글데이 수강생용 가이드 - CSS (최종 완성)
+   작성일: 2026.04.29
+============================================ */
+
+/* ── RESET ── */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ── VARIABLES ── */
+:root {
+  --primary: #7C3AED;
+  --primary-light: #A78BFA;
+  --primary-dark: #5B21B6;
+  --beach1: #0EA5E9;
+  --beach2: #8B5CF6;
+  --bg: #F8F9FA;
+  --card-bg: #FFFFFF;
+  --text: #1E293B;
+  --text-light: #64748B;
+  --border: #E2E8F0;
+  --shadow: rgba(0, 0, 0, 0.1);
+  --warning: #F59E0B;
+  --warning-bg: #FFFBEB;
+  --gradient-1: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  --gradient-2: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+  --gradient-3: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+  --zone-ox: #06B6D4;
+  --zone-bell: #3B82F6;
+  --zone-bingo: #8B5CF6;
+  --zone-radio: #F59E0B;
+}
+
+/* ── BASE ── */
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Malgun Gothic", "Segoe UI", sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  font-size: 15px;
+}
+
+/* ── HEADER ── */
+.header {
+  background: var(--gradient-1);
+  color: white;
+  padding: 2rem 1rem;
+  text-align: center;
+  box-shadow: 0 4px 12px var(--shadow);
+}
+
+.header-inner {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.logo {
+  font-size: 2rem;
+  font-weight: 900;
+  margin-bottom: 0.5rem;
+  letter-spacing: -0.5px;
+}
+
+.subtitle {
+  font-size: 0.95rem;
+  opacity: 0.95;
+  font-weight: 500;
+}
+
+/* ── NAVIGATION TABS ── */
+.nav-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 1rem;
+  background: white;
+  border-bottom: 2px solid var(--border);
+  overflow-x: auto;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 8px var(--shadow);
+}
+
+.tab-btn {
+  padding: 0.75rem 1.25rem;
+  border: none;
+  background: var(--bg);
+  color: var(--text-light);
+  border-radius: 12px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.tab-btn:hover {
+  background: var(--primary-light);
+  color: white;
+  transform: translateY(-2px);
+}
+
+.tab-btn.active {
+  background: var(--primary);
+  color: white;
+  box-shadow: 0 4px 12px rgba(124, 58, 237, 0.3);
+}
+
+/* ── MAIN CONTENT ── */
+.main-content {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem 1rem 4rem;
+}
+
+.tab-content {
+  display: none;
+  animation: fadeIn 0.4s ease;
+}
+
+.tab-content.active {
+  display: block;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ── HERO ── */
+.hero {
+  background: var(--gradient-3);
+  color: white;
+  padding: 3rem 2rem;
+  border-radius: 20px;
+  text-align: center;
+  margin-bottom: 2rem;
+  box-shadow: 0 8px 24px var(--shadow);
+}
+
+.hero h2 {
+  font-size: 1.8rem;
+  font-weight: 900;
+  margin-bottom: 0.75rem;
+  letter-spacing: -0.5px;
+}
+
+.hero p {
+  font-size: 1rem;
+  opacity: 0.95;
+  line-height: 1.7;
+}
+
+.hero-small {
+  background: var(--gradient-2);
+  color: white;
+  padding: 2rem 1.5rem;
+  border-radius: 16px;
+  text-align: center;
+  margin-bottom: 2rem;
+  box-shadow: 0 6px 20px var(--shadow);
+}
+
+.hero-small h2 {
+  font-size: 1.6rem;
+  font-weight: 800;
+  margin-bottom: 0.5rem;
+}
+
+.hero-small p {
+  font-size: 0.95rem;
+  opacity: 0.9;
+  margin-bottom: 0.75rem;
+}
+
+.time-badge {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 20px;
+  padding: 0.5rem 1rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-top: 0.5rem;
+}
+
+/* ── SECTION ── */
+.section {
+  margin-bottom: 2.5rem;
+}
+
+.section-title {
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: var(--text);
+  margin-bottom: 1rem;
+  padding-left: 1rem;
+  border-left: 4px solid var(--primary);
+}
+
+/* ── TIMELINE ── */
+.timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.timeline-item {
+  background: var(--card-bg);
+  border-radius: 12px;
+  padding: 1.25rem;
+  border-left: 4px solid var(--primary);
+  box-shadow: 0 2px 8px var(--shadow);
+  transition: all 0.3s ease;
+}
+
+.timeline-item:hover {
+  transform: translateX(4px);
+  box-shadow: 0 4px 16px var(--shadow);
+}
+
+.timeline-item .time {
+  font-size: 0.85rem;
+  color: var(--primary);
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.timeline-item .event {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 0.25rem;
+}
+
+.timeline-item .location {
+  font-size: 0.9rem;
+  color: var(--text-light);
+}
+
 /* ── ZONE JOURNEY (4개 존 여행 가이드) - 반응형 개선 ── */
 .zone-journey {
   display: flex;
-  flex-wrap: wrap;  /* 화면 작으면 자동 줄바꿈 */
-  align-items: stretch;  /* 높이 동일하게 */
+  flex-wrap: wrap;
+  align-items: stretch;
   justify-content: center;
   gap: 1rem;
   padding: 2rem 1rem;
@@ -10,13 +261,13 @@
   border-radius: 20px;
   box-shadow: 0 4px 16px var(--shadow);
   max-width: 100%;
-  overflow: visible;  /* 스크롤 제거 */
+  overflow: visible;
 }
 
 .zone-card {
-  flex: 1 1 160px;  /* 최소 160px, 자동 확장 */
+  flex: 1 1 160px;
   min-width: 160px;
-  max-width: 200px;  /* 최대 너비 제한 */
+  max-width: 200px;
   background: var(--card-bg);
   border-radius: 16px;
   padding: 1.5rem 1rem;
@@ -99,6 +350,411 @@
   align-self: center;
 }
 
+/* ── RULE BOX ── */
+.rule-box {
+  background: var(--card-bg);
+  border-radius: 12px;
+  padding: 1.5rem;
+  border: 2px solid var(--border);
+  box-shadow: 0 2px 8px var(--shadow);
+}
+
+.rule-box p {
+  margin-bottom: 0.75rem;
+  font-size: 0.95rem;
+  line-height: 1.7;
+}
+
+.rule-box p:last-child {
+  margin-bottom: 0;
+}
+
+.rule-box.important {
+  border-color: var(--primary);
+  background: linear-gradient(to bottom, #F5F3FF, white);
+}
+
+.rule-box .warning {
+  color: #DC2626;
+  font-weight: 700;
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 2px dashed #FCA5A5;
+}
+
+/* ── STEPS ── */
+.steps {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.step {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  background: var(--card-bg);
+  padding: 1.25rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px var(--shadow);
+  transition: all 0.3s ease;
+}
+
+.step:hover {
+  transform: translateX(4px);
+  box-shadow: 0 4px 16px var(--shadow);
+}
+
+.step-num {
+  min-width: 40px;
+  height: 40px;
+  background: var(--primary);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 1.1rem;
+  flex-shrink: 0;
+}
+
+.step-text {
+  font-size: 0.95rem;
+  color: var(--text);
+  line-height: 1.7;
+}
+
+/* ── PREP STEPS (그림 빙고 사전 준비) ── */
+.prep-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.prep-step {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.25rem;
+  background: var(--card-bg);
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px var(--shadow);
+  border-left: 4px solid var(--primary);
+  transition: all 0.3s ease;
+}
+
+.prep-step:hover {
+  transform: translateX(4px);
+  box-shadow: 0 4px 16px var(--shadow);
+}
+
+.prep-num {
+  min-width: 45px;
+  height: 45px;
+  background: var(--primary);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 1.2rem;
+  flex-shrink: 0;
+}
+
+.prep-content {
+  flex: 1;
+}
+
+.prep-title {
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: var(--text);
+  margin-bottom: 0.5rem;
+}
+
+.prep-desc {
+  font-size: 0.9rem;
+  color: var(--text-light);
+  line-height: 1.7;
+}
+
+/* ── CHARACTER EXAMPLES (그림 빙고 캐릭터 예시) ── */
+.character-examples {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.char-category {
+  background: var(--card-bg);
+  border-radius: 12px;
+  padding: 1.25rem;
+  box-shadow: 0 2px 8px var(--shadow);
+  border-left: 4px solid var(--primary);
+}
+
+.char-category-title {
+  font-size: 1rem;
+  font-weight: 800;
+  color: var(--text);
+  margin-bottom: 0.75rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.char-list {
+  font-size: 0.9rem;
+  color: var(--text-light);
+  line-height: 1.8;
+}
+
+/* ── FIGMA CARD BUTTON ── */
+.figma-card {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background: linear-gradient(135deg, #F24E1E 0%, #FF7262 100%);
+  color: white;
+  padding: 1.25rem 1.5rem;
+  border-radius: 16px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 16px rgba(242, 78, 30, 0.25);
+  margin-top: 1rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.figma-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0) 100%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.figma-card:hover::before {
+  opacity: 1;
+}
+
+.figma-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(242, 78, 30, 0.4);
+}
+
+.figma-card:active {
+  transform: translateY(-2px);
+}
+
+.figma-card-icon {
+  font-size: 2.5rem;
+  flex-shrink: 0;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+}
+
+.figma-card-content {
+  flex: 1;
+}
+
+.figma-card-title {
+  font-size: 1.05rem;
+  font-weight: 800;
+  margin-bottom: 0.25rem;
+  letter-spacing: -0.3px;
+}
+
+.figma-card-desc {
+  font-size: 0.85rem;
+  opacity: 0.9;
+}
+
+.figma-card-arrow {
+  font-size: 1.5rem;
+  font-weight: 700;
+  flex-shrink: 0;
+  transition: transform 0.3s ease;
+}
+
+.figma-card:hover .figma-card-arrow {
+  transform: translateX(4px);
+}
+
+/* ── AWARD DETAIL CARD (라디오 시상 상세) ── */
+.award-detail-card {
+  background: var(--card-bg);
+  border-radius: 16px;
+  padding: 1.5rem;
+  margin-bottom: 1.25rem;
+  box-shadow: 0 2px 12px var(--shadow);
+  border-left: 5px solid var(--primary);
+  transition: all 0.3s ease;
+}
+
+.award-detail-card:hover {
+  transform: translateX(4px);
+  box-shadow: 0 4px 20px var(--shadow);
+}
+
+.award-detail-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid var(--border);
+}
+
+.award-detail-icon {
+  font-size: 2.5rem;
+  flex-shrink: 0;
+}
+
+.award-detail-title {
+  font-size: 1.4rem;
+  font-weight: 900;
+  color: var(--text);
+  letter-spacing: -0.5px;
+}
+
+.award-detail-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.award-detail-criteria,
+.award-detail-point {
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: var(--text);
+}
+
+.award-detail-criteria strong,
+.award-detail-point strong {
+  color: var(--primary);
+  font-weight: 800;
+}
+
+/* ── ALERT ── */
+.alert {
+  padding: 1rem 1.25rem;
+  border-radius: 12px;
+  margin-top: 1.5rem;
+  font-size: 0.9rem;
+  line-height: 1.7;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+}
+
+.alert-info {
+  background: #EFF6FF;
+  border-left: 4px solid #3B82F6;
+  color: #1E40AF;
+}
+
+.alert-warning {
+  background: var(--warning-bg);
+  border-left: 4px solid var(--warning);
+  color: #92400E;
+}
+
+/* ── AWARD LIST ── */
+.award-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.award-item {
+  background: var(--card-bg);
+  padding: 1.5rem;
+  border-radius: 12px;
+  text-align: center;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text);
+  box-shadow: 0 2px 8px var(--shadow);
+  transition: all 0.3s ease;
+}
+
+.award-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 20px var(--shadow);
+}
+
+/* ── AWARD GRID SMALL (그림 빙고용) ── */
+.award-grid-small {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 0.75rem;
+}
+
+.award-small {
+  background: var(--card-bg);
+  padding: 1rem;
+  border-radius: 10px;
+  text-align: center;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--text);
+  box-shadow: 0 2px 8px var(--shadow);
+  transition: all 0.3s ease;
+}
+
+.award-small:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 16px var(--shadow);
+}
+
+/* ── CLOSING MESSAGE ── */
+.closing-message {
+  background: var(--gradient-1);
+  color: white;
+  padding: 2.5rem;
+  border-radius: 16px;
+  text-align: center;
+  box-shadow: 0 6px 20px var(--shadow);
+}
+
+.closing-message p {
+  font-size: 1rem;
+  line-height: 1.8;
+  margin-bottom: 1rem;
+}
+
+.closing-message p:last-child {
+  margin-bottom: 0;
+}
+
+.signature {
+  margin-top: 1.5rem;
+  font-style: italic;
+  opacity: 0.9;
+  font-size: 0.95rem;
+}
+
+/* ── FOOTER ── */
+.footer {
+  background: var(--text);
+  color: rgba(255, 255, 255, 0.7);
+  text-align: center;
+  padding: 2rem 1rem;
+  margin-top: 4rem;
+}
+
+.footer p {
+  font-size: 0.9rem;
+  line-height: 1.8;
+}
+
 /* ── RESPONSIVE (반응형) ── */
 
 /* 큰 화면 (1200px 이상) - 4개 가로 배치 + 화살표 */
@@ -133,7 +789,7 @@
   }
   
   .zone-arrow {
-    display: none;  /* 화살표 숨김 */
+    display: none;
   }
   
   .zone-icon {
@@ -206,5 +862,145 @@
   
   .zone-desc {
     font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .logo {
+    font-size: 1.6rem;
+  }
+
+  .subtitle {
+    font-size: 0.85rem;
+  }
+
+  .nav-tabs {
+    justify-content: flex-start;
+    padding: 0.75rem;
+  }
+
+  .tab-btn {
+    padding: 0.6rem 1rem;
+    font-size: 0.85rem;
+  }
+
+  .hero h2 {
+    font-size: 1.5rem;
+  }
+
+  .hero p {
+    font-size: 0.9rem;
+  }
+
+  .hero-small h2 {
+    font-size: 1.4rem;
+  }
+
+  .section-title {
+    font-size: 1.1rem;
+  }
+
+  .award-list {
+    grid-template-columns: 1fr;
+  }
+
+  .award-grid-small {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .prep-step {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .prep-num {
+    min-width: 40px;
+    height: 40px;
+    font-size: 1.1rem;
+  }
+
+  .character-examples {
+    gap: 0.75rem;
+  }
+
+  .char-category {
+    padding: 1rem;
+  }
+
+  .award-detail-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+
+  .award-detail-icon {
+    font-size: 2rem;
+  }
+
+  .award-detail-title {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .main-content {
+    padding: 1.5rem 0.75rem 3rem;
+  }
+
+  .hero {
+    padding: 2rem 1.5rem;
+  }
+
+  .hero-small {
+    padding: 1.5rem 1rem;
+  }
+
+  .time-badge {
+    font-size: 0.75rem;
+    padding: 0.4rem 0.8rem;
+  }
+
+  .award-grid-small {
+    grid-template-columns: 1fr;
+  }
+
+  .step {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .step-num {
+    min-width: 35px;
+    height: 35px;
+    font-size: 1rem;
+  }
+
+  .figma-card {
+    padding: 1rem 1.25rem;
+  }
+
+  .figma-card-icon {
+    font-size: 2rem;
+  }
+
+  .figma-card-title {
+    font-size: 0.95rem;
+  }
+
+  .figma-card-desc {
+    font-size: 0.8rem;
+  }
+
+  .figma-card-arrow {
+    font-size: 1.25rem;
+  }
+
+  .award-detail-card {
+    padding: 1.25rem;
+  }
+
+  .award-detail-criteria,
+  .award-detail-point {
+    font-size: 0.9rem;
   }
 }
