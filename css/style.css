@@ -1,5 +1,5 @@
 /* ============================================
-   밍글데이 수강생용 가이드 - CSS (최종 수정)
+   밍글데이 수강생용 가이드 - CSS (4존 추가)
    작성일: 2026.04.29
 ============================================ */
 
@@ -28,6 +28,10 @@
   --gradient-1: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   --gradient-2: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
   --gradient-3: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+  --zone-ox: #06B6D4;
+  --zone-bell: #3B82F6;
+  --zone-bingo: #8B5CF6;
+  --zone-radio: #F59E0B;
 }
 
 /* ── BASE ── */
@@ -245,78 +249,99 @@ body {
   color: var(--text-light);
 }
 
-/* ── MAP GRID ── */
-.map-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 1.5rem;
+/* ── ZONE JOURNEY (4개 존 여행 가이드) ── */
+.zone-journey {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 2rem;
+  background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+  border-radius: 20px;
+  overflow-x: auto;
+  box-shadow: 0 4px 16px var(--shadow);
 }
 
-.map-card {
+.zone-card {
+  min-width: 200px;
   background: var(--card-bg);
   border-radius: 16px;
-  padding: 2rem;
+  padding: 1.5rem;
   text-align: center;
-  box-shadow: 0 4px 16px var(--shadow);
+  box-shadow: 0 4px 12px var(--shadow);
   transition: all 0.3s ease;
   position: relative;
-  overflow: hidden;
+  border-top: 5px solid var(--zone-ox);
 }
 
-.map-card::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 5px;
+.zone-card.zone-ox {
+  border-top-color: var(--zone-ox);
 }
 
-.map-card.beach1::before {
-  background: var(--beach1);
+.zone-card.zone-bell {
+  border-top-color: var(--zone-bell);
 }
 
-.map-card.beach2::before {
-  background: var(--beach2);
+.zone-card.zone-bingo {
+  border-top-color: var(--zone-bingo);
 }
 
-.map-card:hover {
+.zone-card.zone-radio {
+  border-top-color: var(--zone-radio);
+}
+
+.zone-card:hover {
   transform: translateY(-8px);
   box-shadow: 0 8px 24px var(--shadow);
 }
 
-.map-icon {
-  font-size: 3rem;
-  margin-bottom: 1rem;
-}
-
-.map-card h4 {
-  font-size: 1.3rem;
+.zone-number {
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 32px;
+  height: 32px;
+  background: var(--primary);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   font-weight: 800;
+  font-size: 0.9rem;
+  box-shadow: 0 2px 8px rgba(124, 58, 237, 0.3);
+}
+
+.zone-icon {
+  font-size: 3rem;
+  margin: 1rem 0 0.5rem;
+}
+
+.zone-name {
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: var(--text);
   margin-bottom: 0.5rem;
-  color: var(--text);
 }
 
-.map-card p {
-  font-size: 0.9rem;
+.zone-time {
+  font-size: 0.85rem;
+  color: var(--primary);
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+}
+
+.zone-desc {
+  font-size: 0.85rem;
   color: var(--text-light);
-  margin-bottom: 1rem;
+  line-height: 1.6;
 }
 
-.map-card ul {
-  list-style: none;
-  text-align: left;
-}
-
-.map-card ul li {
-  padding: 0.5rem 0;
-  border-bottom: 1px solid var(--border);
-  font-size: 0.9rem;
-  color: var(--text);
-}
-
-.map-card ul li:last-child {
-  border-bottom: none;
+.zone-arrow {
+  font-size: 2rem;
+  color: var(--primary);
+  font-weight: 700;
+  flex-shrink: 0;
 }
 
 /* ── RULE BOX ── */
@@ -760,8 +785,18 @@ body {
     font-size: 1.1rem;
   }
 
-  .map-grid {
-    grid-template-columns: 1fr;
+  .zone-journey {
+    flex-direction: column;
+    padding: 1.5rem;
+  }
+
+  .zone-card {
+    min-width: 100%;
+  }
+
+  .zone-arrow {
+    transform: rotate(90deg);
+    font-size: 1.5rem;
   }
 
   .award-list {
@@ -866,5 +901,21 @@ body {
   .award-detail-criteria,
   .award-detail-point {
     font-size: 0.9rem;
+  }
+
+  .zone-journey {
+    padding: 1rem;
+  }
+
+  .zone-card {
+    padding: 1.25rem;
+  }
+
+  .zone-icon {
+    font-size: 2.5rem;
+  }
+
+  .zone-name {
+    font-size: 1.1rem;
   }
 }
