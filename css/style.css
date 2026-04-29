@@ -968,48 +968,4 @@ body {
     font-size: 1rem;
   }
 }
-/* 반응형 */
-@media (max-width: 480px) {
-  .figma-card {
-    padding: 1rem 1.25rem;
-  }
-
-  .figma-card-icon {
-    font-size: 2rem;
-  }
-
-  .figma-card-title {
-    font-size: 0.95rem;
-  }
-
-  .figma-card-desc {
-    font-size: 0.8rem;
-  }
-
-  .figma-card-arrow {
-    font-size: 1.25rem;
-  }
-
-  .award-detail-card {
-    padding: 1.25rem;
-  }
-
-  .award-detail-header {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0.75rem;
-  }
-
-  .award-detail-icon {
-    font-size: 2rem;
-  }
-
-  .award-detail-title {
-    font-size: 1.2rem;
-  }
-
-  .award-detail-criteria,
-  .award-detail-point {
-    font-size: 0.9rem;
-  }
 }
