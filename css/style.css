@@ -1004,3 +1004,137 @@ body {
     font-size: 0.9rem;
   }
 }
+
+/* ── EXAMPLE TABLE (그림 예시 테이블) ── */
+.example-table {
+  width: 100%;
+  margin-top: 1rem;
+}
+
+.example-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.example-cell {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 12px var(--shadow);
+  transition: all 0.3s ease;
+}
+
+.example-cell:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 20px var(--shadow);
+}
+
+.example-cell.ai {
+  border-top: 4px solid #667eea;
+}
+
+.example-cell.hand {
+  border-top: 4px solid #f093fb;
+}
+
+.example-header {
+  padding: 1rem;
+  text-align: center;
+  background: linear-gradient(to bottom, #F9FAFB, white);
+  border-bottom: 1px solid var(--border);
+}
+
+.example-badge {
+  display: inline-block;
+  padding: 0.5rem 1.25rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: white;
+}
+
+.example-badge.ai {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.example-badge.hand {
+  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+}
+
+.example-content {
+  padding: 1.5rem;
+}
+
+.example-content p {
+  font-size: 0.9rem;
+  color: var(--text);
+  margin-bottom: 0.75rem;
+  line-height: 1.6;
+}
+
+.example-content p:last-child {
+  margin-bottom: 0;
+}
+
+.example-note {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px dashed var(--border);
+  font-size: 0.85rem !important;
+  color: var(--text-light) !important;
+  font-style: italic;
+}
+
+/* ── IMAGE PREVIEW (작은 이미지 미리보기) ── */
+.image-preview {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 2px dashed var(--border);
+}
+
+.preview-item {
+  text-align: center;
+}
+
+.preview-img {
+  width: 100%;
+  max-width: 250px;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px var(--shadow);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.preview-img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 20px var(--shadow);
+}
+
+.preview-caption {
+  margin-top: 0.75rem;
+  font-size: 0.85rem;
+  color: var(--text-light);
+  font-weight: 600;
+}
+
+/* 모바일 반응형 */
+@media (max-width: 768px) {
+  .example-row {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .image-preview {
+    grid-template-columns: 1fr;
+  }
+  
+  .preview-img {
+    max-width: 200px;
+  }
+}
+
